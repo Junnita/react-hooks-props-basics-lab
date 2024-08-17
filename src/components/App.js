@@ -1,77 +1,26 @@
 import React from 'react';
+import NavBar from './NavBar';
+import Home from './Home';
+import About from './About';
 
-function NavBar() {
-	return (
-		<nav>
-			<a href='#home'>I'm a link!</a>
-		</nav>
-	);
-}
-
-function Home() {
-	return (
-		<div id='home'>import React from "react";
-
-function NavBar() {
-	return (
-		<nav>
-			<a href="#home">I'm a link!</a>
-		</nav>
-	);
-}
-
-function Home() {
-	return (
-		<div id="home">
-			<h1>Home</h1>
-		</div>
-	);
-}
-
-const About = () => {
-	return (
-		<div id="about">
-			<h2>About</h2>
-		</div>
-	);
-};
+// pass this data down as props to the child component(s) that need it!
+import user from '../data/user';
+console.log(user);
 
 function App() {
 	return (
 		<div>
 			<NavBar />
-			<Home />
-			<About/>
-		</div>
-	);
-}
-
-export default App;
-
-			<h1>Home</h1>
-		</div>
-	);
-}
-
-{
-	/* write an <About> component here */
-}
-function About() {
-	return (
-		<div id='about'>
-			<h2>About</h2>
-		</div>
-	);
-}
-
-function App() {
-	return (
-		<div>
-			<NavBar />
-			{/* add the <Home> component here */}
-			<Home />
-			{/* add your <About> component here */}
-			<About />
+			<Home
+				name={user.name}
+				city={user.city}
+				color='firebrick'
+			/>
+			<About
+				bio={user.bio}
+				github={user.links.github}
+				linkedin={user.links.linkedin}
+			/>
 		</div>
 	);
 }
